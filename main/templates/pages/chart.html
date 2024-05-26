@@ -1,0 +1,276 @@
+
+
+{% extends "../base/navbar.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pie Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<style>
+.spacer{
+  height: 20px;
+}
+.contanerCH {
+
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  height: 500px;
+  max-width: 95%;
+
+  gap: 40px;
+  padding: 80px;
+
+}
+
+.charcontaner{
+  justify-content:space-around;
+  width: 450px ;
+  height: 550px;
+  background-color: rgb(236, 243, 241);
+
+  border: 3px solid #00000000; /* Red border */
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: -19px 0 10px #d0b7b70f;
+
+
+}
+.infoCH{
+  display: flex;
+
+  background-color: rgb(198, 226, 218);
+
+  border: 3px solid #00000000;
+  justify-content: center;
+  border-radius: 30px 30px 0px 0px;
+  box-shadow: -19px 0 10px #d0b7b70f;
+
+}
+.favorit {
+
+display: flex;
+justify-content:flex-start;
+align-items: center;
+height: 900px;
+max-width: 95%;
+
+gap: 40px;
+padding: 80px;
+
+}
+
+
+.favirotbook{
+  overflow-y: scroll;
+  justify-content:space-around;
+  width: 650px ;
+  height: 850px;
+  background-color: rgb(236, 243, 241);
+
+  border: 3px solid #00000000; /* Red border */
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: -19px 0 10px #d0b7b70f;
+
+
+}
+.favirotbook p {
+  font-size: smaller;
+}
+favirotbook img {
+  height: 20px;
+  width: 15px;
+}
+
+.infobook{
+  display: flex;
+
+  background-color: rgb(198, 226, 218);
+
+  border: 3px solid #00000000;
+  justify-content: center;
+  border-radius: 30px 30px 0px 0px;
+  box-shadow: -19px 0 10px #d0b7b70f;
+
+}
+.cont{
+  display: flex;
+  flex-direction: row;
+
+
+}
+a {
+        text-decoration: none; /* Removes underline */
+        color: black;          /* Sets text color to black */
+    }
+</style>
+
+<body>
+  <div class="spacer"></div>
+  <div class="contanerCH">
+    <div class="charcontaner">
+    <div class="infoCH"> <p> Most catagories </p></div>
+    <canvas id="myPieChart" width="200" height="150"></canvas>
+  </div>
+  <div class="charcontaner"> 
+    <div class="infoCH"> <p> Most publish year </p></div>
+    <canvas id="date" width="200" height="150"></canvas>
+  </div>
+
+  <div class="charcontaner"> 
+    <div class="infoCH"> <p> Most age </p></div>
+    <canvas id="age" width="200" height="150"></canvas>
+
+  </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+
+  <div class="favorit">
+
+
+    <div class="favirotbook"> 
+      <div class="infobook"> <p> Most age </p></div>
+      
+      <ol>
+      {% for i in likedBook %}
+   
+       
+          <li>
+            <div class="cont">
+          <img src="{{i.image_url}}" alt="" height="25" width="20"> <a href="{% url 'bk_detail' iso=i.isbn  cid=i.category_id  %}">  <p>{{i.title}}</p></a> 
+        </div>
+        </li>
+        {% endfor %}
+        </ol>
+     
+   
+  
+
+      
+
+  </div>
+
+  <div class="favirotbook"> 
+    <div class="infobook"> <p> Most age </p></div>
+  </div>
+    <script>
+        // Data
+        var amounts ={{ amounts|safe }} ;
+        var categories = {{ categoriess|safe }};
+        // Create pie chart
+        var ctx = document.getElementById('myPieChart').getContext('2d');
+        var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: categories,
+                datasets: [{
+                    data: amounts,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(255, 206, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(153, 102, 255, 0.5)',
+                        'rgba(255, 159, 64, 0.5)',
+                        'rgba(0, 255, 0, 0.5)'
+                    ]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Books Distribution by Category'
+                },
+                tooltips: {
+                    callbacks: {
+                        label: function(tooltipItem, data) {
+                            var dataset = data.datasets[tooltipItem.datasetIndex];
+                            var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                return previousValue + currentValue;
+                            });
+                            var currentValue = dataset.data[tooltipItem.index];
+                            var percentage = Math.floor(((currentValue/total) * 100) + 0.5);         
+                            return categories[tooltipItem.index] + ": " + currentValue + " (" + percentage + "%)";
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+<script>
+  // Data
+  var counts ={{ conts|safe }} ;
+  var dates = {{ dates|safe }};
+  // Create pie chart agecount
+  var getdate = document.getElementById('date').getContext('2d');
+  var piechart = new Chart(getdate, {
+      type: 'pie',
+      data: {
+          labels: dates,
+          datasets: [{
+              data: counts,
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.5)',
+                  'rgba(54, 162, 235, 0.5)',
+                  'rgba(255, 206, 86, 0.5)',
+                  'rgba(75, 192, 192, 0.5)',
+                  'rgba(153, 102, 255, 0.5)',
+                  'rgba(255, 159, 64, 0.5)',
+                  'rgba(0, 255, 0, 0.5)'
+              ]
+          }]
+      },
+      options: {
+          title: {
+              display: true,
+              text: 'Books Distribution by Category'
+          }
+      }
+  });
+</script>
+
+<script>
+  // Data
+  var ageescout ={{ agecount|safe }} ;
+  var agees = {{ agees|safe }};
+  // Create pie chart
+  var getage = document.getElementById('age').getContext('2d');
+  var agechart = new Chart(getage, {
+      type: 'pie',
+      data: {
+          labels: agees,
+          datasets: [{
+              data: ageescout,
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.5)',
+                  'rgba(54, 162, 235, 0.5)',
+                  'rgba(255, 206, 86, 0.5)',
+                  'rgba(75, 192, 192, 0.5)',
+                  'rgba(153, 102, 255, 0.5)',
+                  'rgba(255, 159, 64, 0.5)',
+                  'rgba(0, 255, 0, 0.5)'
+              ]
+          }]
+      },
+      options: {
+          title: {
+              display: true,
+              text: 'Books Distribution by Category'
+          },
+      }
+  });
+</script>
+
+</body>
+</html>
+
+{% endblock %}

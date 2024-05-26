@@ -1,0 +1,170 @@
+
+@media (max-width:800px) {
+
+
+
+    .hideOnMobile{
+        display: none;
+    }
+    .menu{
+        display: flex;
+    }
+   .slid1 img{
+    display: none;}
+   
+   
+   .logoo img {
+    display: flex;
+   }
+   .slider {
+    width: 70%;
+   }
+
+      /* swper */
+
+   .image-container {
+    max-width: 100%;
+    
+}
+
+.informations {
+
+    gap: 5px;
+ display: block;
+
+
+}
+.infoo{
+
+    width: 550px;
+    border-radius: 30px 30px 30px 30px; /* Top-left, top-right, bottom-right, bottom-left */
+    background-color: rgb(255, 255, 255);
+   
+
+ 
+}
+
+.infotext{
+
+    width: 400px;
+    text-align: center;
+    font-size: 13px;
+
+}
+
+ }
+
+      /* iso start */
+
+      @media (max-width:800px) {
+
+        .isocontaner{
+            margin: 0 auto;
+            display: flex;
+            flex-direction : column;
+         gap: 6px;
+            
+          
+        }
+        .container {
+           
+         
+            margin: 0 auto;
+            height: 165px;
+        }
+    
+    
+      .imgiso{
+      display: flex;
+      flex-direction: column;
+        max-width: 100%;
+        height: 165px;
+        margin: 0 auto;
+    
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        background-color: white;
+        box-shadow: inset;
+
+    }
+    .imgiso img{
+    
+        display: flex;
+       
+        width: 40%;
+        height: 100px;
+        margin: 0 auto;
+        align-items: center;
+      
+        
+        }
+        .imgiso img:last-child{
+            height: 110px;
+            width: 110px;
+            justify-content: end;
+           
+        }
+            .imgcert{
+                display: flex;
+                flex-direction: row;
+            }
+    }
+    
+      /* iso end */
+
+      @media (max-width:800px) {
+
+        .imgestoshow{
+
+            display: flex;
+            flex-direction:row-reverse;
+            gap: 4px;
+            flex-wrap: nowrap;
+          overflow: scroll;
+        
+            
+            justify-content: center;
+            align-items: center;
+          
+        }
+
+        .spaceside{
+            height: 330px;
+        }
+        .informations{
+
+            gap: 10px;}
+            .contenerswpers{
+            
+                gap: 290px;
+                justify-content: center;
+                max-width: 90%;
+                
+                
+                
+                }
+
+        /* company informations */
+                .infoo{
+                    height: 180px;
+                    width: 95%;
+                   justify-content: center;
+
+                }
+            /* company informations */
+
+
+
+
+            .infooswap{
+                display: flex;
+                justify-content: center;
+                height: 560px;
+                width: 95%;
+            }
+            .swperimgconters{
+                width: 108%;
+                justify-content: center;
+            }
+      }

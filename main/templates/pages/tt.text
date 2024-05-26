@@ -1,0 +1,31 @@
+<script>
+      // Data
+      var ageescout ={{ conts|safe }} ;
+      var agees = {{ agees|safe }};
+      // Create pie chart
+      var getage = document.getElementById('date').getContext('2d');
+      var agechart = new Chart(getage, {
+          type: 'pie',
+          data: {
+              labels: agees,
+              datasets: [{
+                  data: ageescout,
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.5)',
+                      'rgba(54, 162, 235, 0.5)',
+                      'rgba(255, 206, 86, 0.5)',
+                      'rgba(75, 192, 192, 0.5)',
+                      'rgba(153, 102, 255, 0.5)',
+                      'rgba(255, 159, 64, 0.5)',
+                      'rgba(0, 255, 0, 0.5)'
+                  ]
+              }]
+          },
+          options: {
+              title: {
+                  display: true,
+                  text: 'Books Distribution by Category'
+              },
+          }
+      });
+  </script>

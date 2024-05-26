@@ -1,0 +1,60 @@
+<!-- template.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+ 
+
+    <div class="titleblock">
+
+        <h3>belong to </h3>
+    </div>
+    
+    <div class="containerbk">
+        
+    
+        <div class="boks">
+        <section class="cardsbk">
+            {% for books in books1 %}
+            <article class="card card--1">
+              
+                <div class="card__img" style="background-image: url('{{ books.image_url }}');"></div>
+                <a href="#" class="card_link">
+                    <div class="card__img--hover" style="background-image: url('{{ books.image_url }}');"></div>
+                </a>
+              
+                <div class="card__info">
+                 
+                    <h3 class="card__title">{{ books.title }}</h3>
+                        <h3 class="card__title">{{ books.element_id }}</h3>
+                    <span class="card__by">by<a href="#"
+                        class="card__author" title="author">{{ books.author }}</a></span>
+               
+                           
+                    <div class="forcontener">
+                        <div class="row">
+                            
+                           <i class="fa fa-star"> </i>    
+                            <p>{{ book.avg_book_rating }}/10</p>
+                   
+                         
+                        </div>
+                    </div>
+                </div>
+            </a>
+            </article>
+            {% endfor %}
+            
+    
+    
+         
+        </section>
+
+     
+
+</body>
+</html>

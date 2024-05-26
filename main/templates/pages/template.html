@@ -1,0 +1,152 @@
+
+{% extends "../base/navbar.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'static/css/book.css' %}">
+
+<link rel="stylesheet" href="{% static 'static/css/userlist.css' %}">
+
+<div class="titleblock">
+
+    <h3>belong to </h3>
+</div>
+<div class="containerbk">
+    
+
+    <div class="boks">
+    <section class="cardsbk">
+        {% for book in books2 %}
+      
+            
+           
+            
+            
+            
+         
+        
+           
+        <article class="card card--1">
+            
+            
+            <div class="card__img" style="background-image: url('{{ book.image_url }}');">
+
+            </div>
+           
+            <a href="{% url 'bk_detail' iso=book.isbn  cid=book.category_id  %}" class="card_link">
+                <div class="card__img--hover" style="background-image: url('{{ book.image_url }}');"></div>
+            </a>
+        </button>
+            <div class="card__info">
+             
+                <h class="card__title">{{ book.title }}</h3>
+
+                <span class="card__by">by <a href="{{ book.image_url }}" 
+                    class="card__author" title="author">{{ book.author }}</a></span>
+                <div class="forcontener">
+                    <div class="row">
+                        
+                       <i class="fa fa-star"> </i>    
+                        <p>{{ book.avg_book_rating }}/10</p>
+                 
+                     
+                     
+                    </div>
+                </div>
+            </div>
+     
+        </article>
+   
+       
+
+        {% endfor %}
+        
+
+
+     
+    </section>
+
+</div>
+</div>
+<div class="titleblock">
+
+    <h3>belong to </h3>
+</div>
+
+<div class="containerbk">
+    
+
+    <div class="boks">
+    <section class="cardsbk">
+        {% for book in books1 %}
+        <article class="card card--1">
+          
+            <div class="card__img" style="background-image: url('{{ book.image_url }}');"></div>
+            <a href="{% url 'bk_detail' iso=book.isbn  cid=book.category_id  %}">
+                <div class="card__img--hover" style="background-image: url('{{ book.image_url }}');"></div>
+            </a>
+          
+            <div class="card__info">
+             
+                <h3 class="card__title">{{ book.title }}</h3>
+                    <h3 class="card__title">{{ book.element_id }}</h3>
+                <span class="card__by">by<a href="{% url 'bk' book.isbn %}"
+                    class="card__author" title="author">{{ book.author }}</a></span>
+           
+                       
+                <div class="forcontener">
+                    <div class="row">
+                        
+                       <i class="fa fa-star"> </i>    
+                        <p>{{ book.avg_book_rating }}/10</p>
+               
+                     
+                    </div>
+                </div>
+            </div>
+        </a>
+        </article>
+        {% endfor %}
+        
+
+
+     
+    </section>
+
+</div>
+</div>
+
+<div class="users ">
+<div class="containerbk">
+    
+
+    <div class="boks">
+    <section class="cardsbk">
+
+
+
+        {% for user in users %}
+        <div class="user-grid">
+          <div class="user-info">
+            <img
+              src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
+              alt="User Image"
+              class="user-image"
+            />
+            <h2 class="user-name">{{ user.full_name }}</h2>
+
+      <a href="{% url 'userbooks' id=user.id  %} ">    <button class="view-button">View</button> </a>
+          </div>
+        </div>
+        {% endfor %}
+
+
+    </section>
+
+
+
+
+</div>
+</div>
+</div> 
+{% endblock%}

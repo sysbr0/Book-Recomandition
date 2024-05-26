@@ -1,0 +1,339 @@
+{% load static %}
+
+
+<html lang="en">
+    
+<head>
+    
+
+    <title>responsive nav bar</title>
+    <link rel="stylesheet" href="{% static 'static/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'static/css/mobile.css' %}">
+ 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+    <title>Responsive Navbar using HTML, CSS and Javascript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+   
+    <link rel="icon" href="/img/logo.png" />
+    <script src="https://kit.fontawesome.com/dd5559ee21.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  
+   
+    <meta name="description" content="A Daily news website navbar template">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   
+
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="navall">
+ <div class="navbar">
+    <div class="en">
+        <a href="#"><i class="fa-solid fa-language"></i></a>
+        
+        <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+     <!-- YouTube icon -->
+     <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
+      <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="#"><i class="fa-solid fa-envelope"></i></a>
+      <a href="#"><i class="fab fa-whatsapp fa-lg"></i></a>
+
+     </div>  
+ </div>
+ <nav>
+        <ul class="slider">
+            <li onclick="hidsidnav()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+            <li><a href="#">logo</a></li>
+            <li><a href="#">logo</a></li>
+            <li><a href="#">logo</a></li>
+            <li><a href="#">logo</a></li>
+         </ul>
+
+        
+
+        <ul class="slidnav">
+            <div class="logoo">
+                <img src="{% static 'static/img/logo.png' %}" alt="this is img ">
+            </div>
+                  <li class="hideOnMobile"><a href="#">logo</a></li>
+                 <li class="hideOnMobile"><a href="#">logo</a></li>
+                  <li class="hideOnMobile"><a href="#">logo</a></li>
+                  <li class="hideOnMobile"><a href="#">logo</a></li>
+          <div class="slid1">
+                    <li  onclick="showsidnav()" class="menu"> <a href="#"><i class="fa-solid fa-bars"></i></a></li>
+               <div class="logo">
+                  <img src="{% static 'static/img/logo.png' %}" alt="this is img ">
+               </div>
+             </div>
+
+
+        </ul>
+  </nav>
+
+</div>
+  <div class="image-container">
+
+    <img id="main-image" src="{% static 'static/img/1.png' %}" alt="Image">
+  
+
+</div>
+  <div class="isocontaner">
+       
+
+    <div class="container">
+        <div class="header">
+            <h1>شركة الصيدناوي  للمواد الغذائية</h1>
+           
+        </div>
+        <div class="contenttext">
+         شركتنا واحدة من الشركات المعرفة بجودة منتجاتها 
+        </div>
+    </div>
+ 
+    <div class="imgiso">
+<div class="imgcert">
+        <img src="{% static 'static/img/Visual Studio Code.svg' %}" alt="ISO logo">
+        <img src="{% static 'static/img/halal.png' %}" alt="halal logo">
+    </div>
+        <p> جميع منتجاتنا حاصلة على شهادة الجودة العالمية </p>
+    </div>
+   
+    
+</div>
+
+
+<div class="dotted-line"></div>
+
+
+
+  <div class="informations">
+       <div class="infoo">
+<div class="infoimg">
+    
+        <img src="{% static 'static/img/info/1.png' %}" alt="">
+
+
+</div>
+<div class="infotext">
+
+
+
+    <p>   
+
+      تتفرد منتجاتنا بأنها مصنوعة بالكامل من مواد عضوية ذات جودة عالية، مما يضمن لعملائنا تجربة منتجات طبيعية وصديقة للبيئة
+      
+    </p>
+   
+</div>
+
+       </div>
+       <div class="infoo">
+
+        <div class="infoimg">
+            <img src="{% static 'static/img/info/2.png' %}" alt="">
+
+        </div>
+        <div class="infotext">
+         <p>  
+            نفتخر في شركتنا بتقديم منتجات حلال تمامًا لعملائنا الكرام. نحرص على أن يتم اختيار وتصنيع كل منتج وفقًا للمعايير
+        
+        </p>
+        </div>
+
+       </div>
+       <div class="infoo">
+        <div class="infoimg">
+            <img src="{% static 'static/img/info/3.png' %}" alt="">
+
+
+
+        </div>
+        <div class="infotext">
+            <p>
+
+                        بفضل التزامنا بالجودة العالية،
+                        نحظى بثقة عملائنا ورضاهم التام،
+                 ونتجاوز توقعاتهم في كل مرة
+                    </p>
+
+
+
+        </div>
+
+       </div>
+</div>
+
+<div class="spaceside"></div>
+
+
+
+
+<div class="MapAndSwap">
+
+
+        
+      
+<div class="contenerswpers">
+        <div class="informations"> 
+            <!-- Fill or remove this empty div -->
+            
+            <div class="infooswap">
+         
+                <!-- Make sure this image path is correct -->
+                <img id="swpermain" src="/1024/wp4471365.jpg" alt="">
+            </div>
+            
+        </div>
+      
+        <div class="swperimgconters">
+         
+            <div class="swperimges">
+
+
+                <div class="infooswap">
+
+
+
+                    
+                    <div class="imgestoshow">
+
+                        
+                        <!-- {% static 'static/img/info/3.png' %}  -->
+                        <img class= "imgestoshows active" src="/1024/2.jpeg" alt="">
+                        <img class="imgestoshows" src="{% static 'static/img/1024/3.webp' %}" alt="">
+                        <img class="imgestoshows" src="{% static 'static/img/1024/4.jpeg' %}" alt="">
+                        <img class="imgestoshows" src="{% static 'static/img/1024/5.webp' %}" alt="">
+                        <img class="imgestoshows" src="{% static 'static/img/1024/6.jpeg' %}" alt="">
+                        <img class="imgestoshows" src="{% static 'static/img/1024/2.jpeg' %}" alt="">
+                        <img class="imgestoshows" src="{% static 'static/img/1024/7.webp' %}" alt="">
+                        <img class="imgestoshows" src="{% static 'static/img/1024/8.webp' %}" alt="">
+                        <img class="imgestoshows" src="{% static 'static/img/1024/9.jpg' %}" alt="">
+                        <img class="imgestoshows" src="{% static 'static/img/1024/10.webp' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let currentIndex = 0; // To keep track of the current image index
+const changeInterval = 5000; // Change image every 5000 milliseconds (5 seconds)
+let intervalHandle = null; // To store the interval ID
+
+// Function to change the image
+function changeImage() {
+let imagesToShow = document.getElementsByClassName('imgestoshows');
+let activeImage = document.getElementsByClassName('active');
+
+// Remove 'active' class from the current image
+if (activeImage.length > 0) {
+    activeImage[0].classList.remove('active');
+}
+
+// Add 'active' class to the next image and update the main image
+imagesToShow[currentIndex].classList.add('active');
+document.getElementById('swpermain').src = imagesToShow[currentIndex].src;
+
+// Update the currentIndex for the next image
+currentIndex = (currentIndex + 1) % imagesToShow.length; // Loop back to the first image after the last one
+}
+
+// Start automatic image change
+function startImageChange() {
+if (!intervalHandle) { // Check if the interval isn't already running
+    intervalHandle = setInterval(changeImage, changeInterval);
+}
+}
+
+// Stop automatic image change
+function stopImageChange() {
+if (intervalHandle) {
+    clearInterval(intervalHandle);
+    intervalHandle = null;
+}
+}
+
+// Automatically change the image every 5 seconds initially
+startImageChange();
+
+// Add mouseover event listener to each thumbnail image
+for (var i = 0; i < document.getElementsByClassName('imgestoshows').length; i++) {
+document.getElementsByClassName('imgestoshows')[i].addEventListener('mouseover', function() {
+    if (document.getElementsByClassName('active').length > 0) {
+        document.getElementsByClassName('active')[0].classList.remove('active');
+    }
+
+    this.classList.add('active');
+    document.getElementById('swpermain').src = this.src;
+    
+    // Reset currentIndex to the hovered image index
+    currentIndex = Array.from(document.getElementsByClassName('imgestoshows')).indexOf(this);
+});
+}
+
+// Add mouseover and mouseout event listeners to the main image display area
+document.getElementById('swpermain').addEventListener('mouseover', stopImageChange);
+document.getElementById('swpermain').addEventListener('mouseout', startImageChange);
+
+</script>
+<!-- Bootstrap JavaScript link -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+  <script>
+      function showsidnav() {
+      const sidnav = document.querySelector('.slider')
+      sidnav.style.display ='flex'
+      }
+      function hidsidnav(){
+       const sidnavhide = document.querySelector('.slider')
+      sidnavhide.style.display ='none'
+      }
+
+// Select the main image element
+const mainImage = document.getElementById('main-image');
+
+// Define an array of image URLs
+const images = ['{% static 'static/img/i3.png' %}' , '/img/3.jpg', '/img/4.jpg', '/img/5.jpg', '/img/6.jpg']; // Add more image URLs as needed
+
+// Initialize a variable to keep track of the current image index
+let currentImageIndex = 0;
+
+// Function to swap the image
+function swapImage() {
+    // Increment the current image index and ensure it wraps around
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    
+    // Update the 'src' attribute of the main image with the next image URL
+    mainImage.src = images[currentImageIndex];
+}
+setInterval(swapImage, 5000);
+
+
+
+
+    </script>
+
+</body>
+
+
+
+
+</html>

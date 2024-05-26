@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automatic Responsive Image Slider</title>
+<style>
+  .slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+  }
+  .slide {
+    min-width: 100%;
+    position: relative;
+  }
+  .slide img {
+    width: 100%;
+    height: auto;
+  }
+  .description {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    .description {
+      font-size: 16px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="slider">
+  <div class="slides">
+    <div class="slide">
+      <img src="1.jpg" alt="Image 1">
+      <div class="description">Description for Image 1</div>
+    </div>
+    <div class="slide">
+      <img src="2.jpg" alt="Image 2">
+      <div class="description">Description for Image 2</div>
+    </div>
+    <div class="slide">
+      <img src="3.jpg" alt="Image 3">
+      <div class="description">Description for Image 3</div>
+    </div>
+    <!-- Add more images and descriptions as needed -->
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelector('.slides');
+  const slideWidth = document.querySelector('.slide').clientWidth;
+  let counter = 0;
+
+  function nextSlide() {
+    if (counter >= slides.children.length - 1) {
+      counter = 0;
+    } else {
+      counter++;
+    }
+    slides.style.transform = `translateX(${-counter * slideWidth}px)`;
+  }
+
+  setInterval(nextSlide, 3000); // Change slide every 3 seconds (adjust as needed)
+</script>
+
+</body>
+</html>

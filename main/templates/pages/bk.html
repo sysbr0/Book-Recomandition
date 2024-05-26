@@ -1,0 +1,191 @@
+
+
+{% extends "../base/navbar.html" %}
+{% block content %}
+
+<style>
+/*  /* Background and font styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+
+/* Book info container */
+.bookinfo {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 150;
+    color: #444;
+    display: flex;
+    align-items:baseline;
+    justify-content:flex-end;
+}
+
+/* Book container */
+.book {
+    width: 1000px;
+    height: 550px;
+    border-radius: 5px;
+    display: flex;
+    box-shadow: 0 5px 20px 10px rgba(0, 0, 0, .2);
+ 
+}
+
+
+.book__description{
+    height: 100px;
+    width: 250px;
+    overflow-y:hidden
+}
+/* Book image section */
+.book__hero {
+    flex: 0 0 45%;
+}
+
+.book__img {
+    width: 300px;
+    height: 500px;
+border:#444
+}
+
+/* Book content section */
+.book__content {
+    background-color: #fff;
+    flex: 1;
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Book price section */
+.book__price {
+    background:linear-gradient(to bottom, #A9C9FF 0%, #1fb634 100%);
+  
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: rgb(255, 255, 255);
+    writing-mode: vertical-lr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Book title section */
+.book__title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.heading__primary {
+    font-size: 16px;
+    margin-right: auto;
+    color: #1fb634;
+}
+
+/* Book tag section */
+.book__tag {
+    font-size: 10px;
+    color: #fff;
+    padding: 2px 7px;
+    border-radius: 100px;
+    margin-right: 8px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.book__tag--1 {
+    background-color: #A9C9FF;
+}
+
+.book__tag--2 {
+    background-color:#FFBBEC;
+}
+
+/* Book description section */
+.book__description-container {
+    width: 400px;
+    height: 199; /* Adjust the height as needed */
+    overflow-y: scroll;
+    margin-top: 100px; /* Add some spacing */
+    /* or white-space: pre-line; */
+}
+
+.book__description {
+    font-size: 14px;
+}
+
+/* Book author section */
+.book__author {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Book details section */
+.book__details {
+    display: flex;
+    margin: auto;
+}
+
+.book__detail {
+    font-size: 13px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.icons i {
+    margin-right: 3px;
+    font-size: 18px;
+}
+
+/* Icon colors */
+.icons-red {
+    color: salmon;
+}
+
+.icons-grey {
+    color: grey;
+}
+
+.icons-yellow {
+    color: rgb(190, 190, 71);
+}
+
+</style>
+
+
+  
+
+<div class="bookinfo">
+    {% for books in books1 %}
+    <figure class="book">
+        <div class="book__hero">
+            <img src="{{ books.image_url }}" alt="Rambo" class="book__img">
+        </div>
+        <div class="book__content">
+            <div class="book__title">
+                <h1 class="heading__primary">{{ books.title }}</h1>
+                <div class="book__tag book__tag--1">{{ books.category }}</div>
+                <div class="book__tag book__tag--2">{{ books.avg_age }}</div>
+            </div>
+            <div class="book__description-container">
+                <div class="bcontainer">
+                    <h5>{{ books.description }}</h5>
+                </div>
+            </div>
+            <div class="book__author">Written BY {{ books.author }}</div>
+            <div class="book__author">published BY {{ books.publisher }}</div>
+            <div class="book__details">
+                <p class="book__detail"><span class="icons icons-red"><i class="fas fa-star"></i> </span>{{ books.avg_book_rating }}/10</p>
+                <p class="book__detail"><span class="icons icons-grey"><i class="fas fa-clock"></i> </span>{{ books.year_of_publication }}</p>
+                <p class="book__detail"><span class="icons icons-yellow"></span>{{ books.isbn }}</p>
+            </div>
+        </div>
+        <div class="book__price">$12.56</div>
+    </figure>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
