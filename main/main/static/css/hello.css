@@ -1,0 +1,154 @@
+
+
+
+.spaceside{
+    height: 100px;
+}
+
+
+
+
+.contenerswpers{
+display: flex;
+flex-direction: column;
+gap: 360px;
+
+
+
+}
+
+
+
+
+.informations{
+
+
+
+    height: 220px;
+    width: 480px;
+    margin-right: 0%;
+    border-radius: 30px 30px 30px 30px; /* Top-left, top-right, bottom-right, bottom-left */
+    background-color: rgb(255, 255, 255);
+}
+.infoo{
+   
+display: contents;
+  
+   
+    flex-direction: row;
+      
+    height: 500px;
+    width: 500px;
+    
+      
+   
+    border-radius: 20px 20px 20px 20px; /* Top-left, top-right, bottom-right, bottom-left */
+    background-color: rgba(204, 171, 171, 0.203);
+   
+}
+
+.infoo img {
+   
+     
+    
+      height: 550px;
+      width: 560px;
+      border: 5px solid rgb(0, 0, 0);
+      border-radius: 30px 30px 30px 30px; 
+    
+     
+}
+/*   */
+.informations :first-child{
+     background-color: rgba(255, 255, 255, 0);
+}
+
+
+
+.swperimgconters{
+   
+
+
+display: flex;
+flex-direction: row-reverse;
+
+height: 110px;
+ width: 560px;;
+ border-radius: 30px 30px 30px 30px; 
+ border: 5px solid rgb(0, 0, 0);
+ overflow-x: scroll;
+ overflow-y: hidden;
+
+  
+}
+
+.swperimges{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+       height: 100px;
+      width: 680px;
+       margin: 0 auto;
+       padding: 20px;
+   
+       border-radius: 30px 30px 30px 30px; /* Top-left, top-right, bottom-right, bottom-left */
+       background-color: rgba(101, 25, 25, 0.203);
+      
+}
+.swperimgconters :first-child{
+    background-color: rgba(255, 255, 255, 0);
+ 
+}
+.imgestoshow{
+
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    flex-wrap: nowrap;
+overflow-x: scroll;
+
+    
+    justify-content: center;
+    align-items: center;
+  
+}
+
+
+.imgestoshow :hover{
+opacity: 10;
+}
+
+.imgestoshow  img{ 
+    margin: 0%;
+   
+    opacity: 0.5;
+   height: 100px;
+   width: 100px;
+   border: 3px solid rgb(0, 0, 0);
+  
+
+} 
+
+.imgestoshows.active {
+    opacity: 1; /* Full opacity for the active image */
+}
+@media (max-width:400px) {
+
+
+
+.swperimgconters{
+   
+
+    justify-content: first baseline;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+    height: 95%;
+     width: 600px;;
+     border-radius: 30px 30px 30px 30px; 
+     border: 5px solid rgb(0, 0, 0);
+   overflow-x: scroll;
+      
+    }
+    
+}
