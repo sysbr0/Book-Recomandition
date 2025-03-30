@@ -9,7 +9,7 @@ from django.db.models import Max
 from .models import getvisited
 from .models import agee
 from .models import Person
-from django.shortcuts import render, redirect , get_object_or_404
+from django.shortts import render, redirect , get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages 
